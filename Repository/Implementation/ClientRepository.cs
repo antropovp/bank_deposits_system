@@ -3,9 +3,14 @@ using BankDepositsSystem.Entity;
 
 namespace BankDepositsSystem.Repository.Implementation
 {
-    public class Repository : IRepository
+    public class ClientRepository : IClientRepository
     {
         public ObservableCollection<Client> Clients { get; set; }
+
+        public ClientRepository()
+        {
+            Clients = new ObservableCollection<Client>();
+        }
 
         public void Add(Client client)
         {

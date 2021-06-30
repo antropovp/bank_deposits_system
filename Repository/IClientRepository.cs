@@ -3,8 +3,10 @@ using BankDepositsSystem.Entity;
 
 namespace BankDepositsSystem.Repository
 {
-    public interface IRepository
+    public interface IClientRepository
     {
+        ObservableCollection<Client> Clients { get; set; }
+
         void Add(Client client);
         void Add(ObservableCollection<Client> clients);
 

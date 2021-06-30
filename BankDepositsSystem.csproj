@@ -58,8 +58,8 @@
     <Compile Include="AddClientWindow.xaml.cs">
       <DependentUpon>AddClientWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Repository\Implementation\Repository.cs" />
-    <Compile Include="Repository\IRepository.cs" />
+    <Compile Include="Repository\Implementation\ClientRepository.cs" />
+    <Compile Include="Repository\IClientRepository.cs" />
     <Page Include="AddClientWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
