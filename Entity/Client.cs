@@ -7,15 +7,15 @@ namespace BankDepositsSystem.Entity
     public class Client
     {
         public string Name { get; }
-        public ClientStatus Status { get; }
+        public ClientType Type { get; }
         public bool IsHighCreditScore { get; }
 
         public ObservableCollection<Deposit> Deposits { get; set; }
 
-        public Client(string name, ClientStatus status, bool isHighCreditScore)
+        public Client(string name, ClientType type, bool isHighCreditScore)
         {
             Name = name;
-            Status = status;
+            Type = type;
             IsHighCreditScore = isHighCreditScore;
         }
     }

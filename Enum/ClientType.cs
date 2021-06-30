@@ -1,6 +1,6 @@
 ﻿namespace BankDepositsSystem.Enum
 {
-    public enum ClientStatus
+    public enum ClientType
     {
         REGULAR, 
         VIP,
