@@ -11,5 +11,10 @@ namespace BankDepositsSystem
         {
             InitializeComponent();
         }
+
+        private void AddClientBtn_OnClick(object sender, RoutedEventArgs e)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

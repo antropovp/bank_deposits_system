@@ -30,7 +30,7 @@
             </CheckBox>
         </StackPanel>
 
-        <Button x:Name="AddClientBtn" Click="CreateWorkerBtn_Click" Content="Добавить"
+        <Button x:Name="AddClientBtn" Click="AddClientBtn_OnClick" Content="Добавить"
                 Width="140" Height="30" Margin="0 25 0 10"
                 FontSize="14"/>
     </StackPanel>
