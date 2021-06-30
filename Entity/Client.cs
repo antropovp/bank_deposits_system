@@ -17,6 +17,7 @@ namespace BankDepositsSystem.Entity
             Name = name;
             Status = status;
             IsHighCreditScore = isHighCreditScore;
+            Deposits = new ObservableCollection<Deposit>();
         }
     }
 }

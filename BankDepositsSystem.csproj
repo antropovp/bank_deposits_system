@@ -55,8 +55,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Repository\Implementation\Repository.cs" />
-    <Compile Include="Repository\IRepository.cs" />
+    <Compile Include="Repository\Implementation\ClientRepository.cs" />
+    <Compile Include="Repository\IClientRepository.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
