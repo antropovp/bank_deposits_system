@@ -1,15 +1,16 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using BankDepositsSystem.Enum;
 
 namespace BankDepositsSystem.Entity
 {
-    class Client
+    public class Client
     {
         public string Name { get; }
         public ClientStatus Status { get; }
         public bool IsHighCreditScore { get; }
 
-        public List<Deposit> Deposits { get; set; }
+        public ObservableCollection<Deposit> Deposits { get; set; }
 
         public Client(string name, ClientStatus status, bool isHighCreditScore)
         {

@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BankDepositsSystem.Entity
+﻿namespace BankDepositsSystem.Entity
 {
-    class Deposit
+    public class Deposit
     {
         public bool isCapitalized { get; }
         public double annualInterest { get; }
