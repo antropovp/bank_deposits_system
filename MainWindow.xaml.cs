@@ -20,9 +20,9 @@ namespace BankDepositsSystem
 
             #region Test
 
-            Client joe = new Client("Joe", ClientStatus.REGULAR, false);
+            Client joe = new Client("Joe", ClientType.REGULAR, false);
             ClientRepository.Add(joe);
-            Client empanadita = new Client("Steph", ClientStatus.CORPORATE, true);
+            Client empanadita = new Client("Steph", ClientType.CORPORATE, true);
             ClientRepository.Add(empanadita);
             empanadita.Deposits.Add(new Deposit(true, 14.5, 10_000));
 
