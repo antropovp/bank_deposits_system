@@ -1,0 +1,54 @@
+﻿<Window x:Class="BankDepositsSystem.OpenDepositWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BankDepositsSystem"
+        xmlns:entity="clr-namespace:BankDepositsSystem.Entity"
+        mc:Ignorable="d"
+        Title="Открытие вклада" Height="360" Width="240" MinHeight="350" MinWidth="200">
+    <StackPanel VerticalAlignment="Center">
+
+        <StackPanel Width="160">
+            <Label Content="Клиент:" HorizontalAlignment="Left" FontSize="12"/>
+            <ComboBox x:Name="ClientBox" VerticalContentAlignment="Center" Height="40" SelectedIndex="0">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate DataType="{x:Type entity:Client}">
+                        <StackPanel>
+                            <TextBlock Text="{Binding Name}" Margin="0" FontSize="14"/>
+                            <TextBlock Text="{Binding Type}" Margin="0 0" FontSize="10" Foreground="DimGray" TextAlignment="Right"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+        </StackPanel>
+
+        <StackPanel Width="160" Margin="0 10 0 0">
+            <Label Content="Сумма:" HorizontalAlignment="Left" FontSize="12"/>
+            <TextBox x:Name="DepositAmountBox" TextWrapping="Wrap" PreviewTextInput="ValidateInput"
+                     Height="30" Padding="8 0" FontSize="13" VerticalContentAlignment="Center"
+            />
+        </StackPanel>
+
+        <StackPanel Width="160" Margin="0 10 0 0">
+            <Label Content="Ставка:" HorizontalAlignment="Left" FontSize="12"/>
+            <TextBox x:Name="DepositInterestBox" TextWrapping="Wrap" PreviewTextInput="ValidateInput"
+                     Height="30" Padding="8 0" FontSize="13" VerticalContentAlignment="Center"
+            />
+        </StackPanel>
+
+        <StackPanel Width="160" Margin="0 10 0 0">
+            <CheckBox x:Name="CapitalizedBox" PreviewTextInput="ValidateInput"
+                      Height="40" Padding="8 0" FontSize="13" VerticalContentAlignment="Center"
+            >
+                <CheckBox.Content>
+                    <TextBlock Text="С капитализацией" TextWrapping="Wrap"/>
+                </CheckBox.Content>
+            </CheckBox>
+        </StackPanel>
+
+        <Button x:Name="OpenDepositBtn" Click="OpenDepositBtn_OnClick" Content="Открыть"
+                Width="140" Height="30" Margin="0 15 0 10"
+                FontSize="14"/>
+    </StackPanel>
+</Window>
