@@ -4,6 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BankDepositsSystem"
+        xmlns:implementation="clr-namespace:BankDepositsSystem.Repository.Implementation"
+        xmlns:entity="clr-namespace:BankDepositsSystem.Entity"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
@@ -45,10 +47,34 @@
         </Grid>
 
         <!-- Отображение списка клиентов и их вкладов -->
-        <TreeView Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10 10">
+        <TreeView x:Name="ClientTreeView" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                  Margin="10 10">
             <TreeView.Resources>
-                <!-- <HierarchicalDataTemplate></HierarchicalDataTemplate> -->
-                <!-- <DataTemplate></DataTemplate> -->
+                <HierarchicalDataTemplate ItemsSource="{Binding Deposits}" 
+                                          DataType="{x:Type entity:Client}" >
+                    <StackPanel>
+                        <TextBlock Text="{Binding Name}" 
+                                   FontSize="15"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Тип клиента:"
+                                       FontSize="12" Foreground="DimGray"/>
+                            <TextBlock Text="{Binding Status}" Margin="3 0 0 0"
+                                       FontSize="12" Foreground="DimGray"/>
+                        </StackPanel>
+                    </StackPanel>
+                </HierarchicalDataTemplate>
+                <DataTemplate DataType="{x:Type entity:Deposit}">
+                    <StackPanel>
+                        <TextBlock Text="{Binding Amount}" 
+                                   FontSize="15"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Годовой процент:"
+                                       FontSize="12" Foreground="DimGray"/>
+                            <TextBlock Text="{Binding AnnualInterest}" Margin="3 0 0 0"
+                                       FontSize="12" Foreground="DimGray"/>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
             </TreeView.Resources>
         </TreeView>
     </Grid>
