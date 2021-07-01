@@ -4,7 +4,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BankDepositsSystem"
-        xmlns:implementation="clr-namespace:BankDepositsSystem.Repository.Implementation"
         xmlns:entity="clr-namespace:BankDepositsSystem.Entity"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
@@ -58,7 +57,7 @@
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="Тип клиента:"
                                        FontSize="12" Foreground="DimGray"/>
-                            <TextBlock Text="{Binding Status}" Margin="3 0 0 0"
+                            <TextBlock Text="{Binding Type}" Margin="3 0 0 0"
                                        FontSize="12" Foreground="DimGray"/>
                         </StackPanel>
                     </StackPanel>

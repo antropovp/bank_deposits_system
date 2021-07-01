@@ -21,8 +21,8 @@
         </StackPanel>
 
         <StackPanel Width="160" Margin="0 10 0 0">
-            <CheckBox x:Name="CreditScoreBox" PreviewTextInput="ValidateInput"
-                     Height="40" Padding="8 0" FontSize="13" VerticalContentAlignment="Center"
+            <CheckBox x:Name="CreditScoreBox" VerticalContentAlignment="Center"
+                     Height="40" Padding="8 0" FontSize="13"
             >
                 <CheckBox.Content>
                     <TextBlock Text="Хорошая кредитная история" TextWrapping="Wrap"/>
