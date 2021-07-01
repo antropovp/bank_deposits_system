@@ -1,16 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace BankDepositsSystem
 {
@@ -19,9 +10,15 @@ namespace BankDepositsSystem
     /// </summary>
     public partial class OpenDepositWindow : Window
     {
+        private static readonly Regex _regex = new("[^0-9]+");
+
         public OpenDepositWindow()
         {
             InitializeComponent();
+        }
+        public void ValidateInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = _regex.IsMatch(e.Text);
         }
 
         private void OpenDepositBtn_OnClick(object sender, RoutedEventArgs e)
