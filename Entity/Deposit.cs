@@ -5,6 +5,9 @@ namespace BankDepositsSystem.Entity
     public class Deposit
     {
         public DateTime DateOfCreation { get; }
+
+        public string DateOfCreationWithoutTime_Text => DateOfCreation.ToString("dd/MM/yyyy");
+
         public Client Owner { get; }
         public string Name { get; set; }
         public bool IsCapitalized { get; }

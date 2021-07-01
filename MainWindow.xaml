@@ -49,6 +49,11 @@
         <TreeView x:Name="ClientTreeView" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
                   Margin="10 10">
             <TreeView.Resources>
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}"
+                                 Color="#440088bb" />
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}"
+                                 Color="Black" />
+
                 <HierarchicalDataTemplate ItemsSource="{Binding Deposits}" 
                                           DataType="{x:Type entity:Client}" >
                     <StackPanel>

@@ -1,0 +1,111 @@
+﻿<Window x:Class="BankDepositsSystem.TransferWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BankDepositsSystem"
+        xmlns:entity="clr-namespace:BankDepositsSystem.Entity"
+        mc:Ignorable="d"
+        Title="TransferWindow" Height="420" Width="630" MinHeight="320" MinWidth="620">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+
+        <DockPanel Grid.Row="0" Margin="20 10">
+            <Label Content="Выберите вклад для перевода:" HorizontalAlignment="Left" FontSize="13"
+                   DockPanel.Dock="Top"/>
+
+            <!-- Отображение списка клиентов и их вкладов -->
+            <TreeView x:Name="ClientTreeView" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                      Margin="0 5 0 0"
+                      DockPanel.Dock="Top">
+                <TreeView.Resources>
+                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}"
+                                     Color="#440088bb" />
+                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}"
+                                     Color="Black" />
+
+                    <HierarchicalDataTemplate ItemsSource="{Binding Deposits}" 
+                                              DataType="{x:Type entity:Client}" >
+                        <StackPanel>
+                            <TextBlock Text="{Binding Name}" 
+                                       FontSize="15"/>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Тип клиента:"
+                                           FontSize="12" Foreground="DimGray"/>
+                                <TextBlock Text="{Binding Status}" Margin="3 0 0 0"
+                                           FontSize="12" Foreground="DimGray"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </HierarchicalDataTemplate>
+                    <DataTemplate DataType="{x:Type entity:Deposit}">
+                        <StackPanel>
+                            <TextBlock Text="{Binding Amount}" 
+                                       FontSize="15"/>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="Годовой процент:"
+                                           FontSize="12" Foreground="DimGray"/>
+                                <TextBlock Text="{Binding AnnualInterest}" Margin="3 0 0 0"
+                                           FontSize="12" Foreground="DimGray"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </DataTemplate>
+                </TreeView.Resources>
+            </TreeView>
+        </DockPanel>
+
+        <Grid Grid.Row="1" Margin="20 0 20 20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="160"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0" VerticalAlignment="Center" Orientation="Horizontal" Margin="0 0 0 0">
+                <StackPanel Width="220">
+                    <Label Content="С вклада:" HorizontalAlignment="Left" FontSize="12"/>
+                    <ComboBox x:Name="DepositBox" VerticalContentAlignment="Center" Height="45" SelectedIndex="0">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate DataType="{x:Type entity:Deposit}">
+                                <Grid Width="180" Height="45">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <StackPanel Grid.Column="0" HorizontalAlignment="Left" Width="90">
+                                        <TextBlock Text="{Binding Name}" TextWrapping="Wrap"
+                                               Margin="0" FontSize="13" TextAlignment="Left"/>
+                                        <TextBlock Text="{Binding DateOfCreationWithoutTime_Text}"
+                                               Margin="0 0" FontSize="10" Foreground="DimGray" TextAlignment="Left"/>
+                                    </StackPanel>
+
+                                    <StackPanel Grid.Column="1" HorizontalAlignment="Right" Width="90">
+                                        <TextBlock Text="{Binding Amount}" TextWrapping="Wrap"
+                                               Margin="0" FontSize="13" TextAlignment="Right"/>
+                                        <TextBlock Text="{Binding AnnualInterest}"
+                                               Margin="0 0" FontSize="10" Foreground="DimGray" TextAlignment="Right"/>
+                                    </StackPanel>
+                                </Grid>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                </StackPanel>
+
+                <StackPanel Width="160" Margin="20 0 0 0">
+                    <Label Content="Сумма перевода:" HorizontalAlignment="Left" FontSize="12"/>
+                    <TextBox x:Name="TransferAmountBox" PreviewTextInput="ValidateInput" TextWrapping="Wrap" Margin="0 7 0 0"
+                         Height="30" Padding="8 0" FontSize="13" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"
+                />
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right"
+                        Margin="0 23 0 0">
+                <Button x:Name="TransferBtn" Click="TransferBtn_OnClick"
+                        Content="Перевести" Width="160" Height="35" FontSize="13"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
