@@ -3,6 +3,8 @@ using BankDepositsSystem.Entity;
 using BankDepositsSystem.Enum;
 using BankDepositsSystem.Repository;
 using BankDepositsSystem.Repository.Implementation;
+using BankDepositsSystem.Service;
+using BankDepositsSystem.Service.Implementation;
 
 namespace BankDepositsSystem
 {
@@ -12,19 +14,22 @@ namespace BankDepositsSystem
     public partial class MainWindow : Window
     {
         public IClientRepository ClientRepository { get; set; }
+        public IClientService ClientService { get; set; }
+        public IDepositService DepositService { get; set; }
 
         public MainWindow()
         {
             InitializeComponent();
             ClientRepository = new ClientRepository();
+            ClientService = new ClientService();
+            DepositService = new DepositService();
 
             #region Test
 
-            Client joe = new Client("Joe", ClientType.REGULAR, false);
-            ClientRepository.Add(joe);
-            Client empanadita = new Client("Steph", ClientType.CORPORATE, true);
-            ClientRepository.Add(empanadita);
-            empanadita.Deposits.Add(new Deposit(true, 14.5, 10_000));
+            ClientService.AddClient(ClientRepository, "Joe", ClientType.REGULAR, false);
+
+            Client empanadita = ClientService.AddClient(ClientRepository, "Steph", ClientType.CORPORATE, true);
+            DepositService.OpenDeposit(empanadita, "BBVA deposit", true, 14.5, 10_000);
 
             #endregion
 
