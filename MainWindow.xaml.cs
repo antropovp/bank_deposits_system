@@ -36,19 +36,10 @@ namespace BankDepositsSystem
             ClientTreeView.ItemsSource = ClientRepository.Clients;
         }
 
-        private void OpenDepositBtn_OnClick(object sender, RoutedEventArgs e)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        private void CloseDepositBtn_OnClick(object sender, RoutedEventArgs e)
-        {
-            throw new System.NotImplementedException();
-        }
-
         private void AddClientBtn_OnClick(object sender, RoutedEventArgs e)
         {
-            throw new System.NotImplementedException();
+            AddClientWindow addClientWindow = new AddClientWindow();
+            addClientWindow.Show();
         }
 
         private void DeleteClientBtn_OnClick(object sender, RoutedEventArgs e)
@@ -56,12 +47,24 @@ namespace BankDepositsSystem
             throw new System.NotImplementedException();
         }
 
-        private void TestBtn_OnClick(object sender, RoutedEventArgs e)
+        private void TransferBtn_OnClick(object sender, RoutedEventArgs e)
+        {
+            TransferWindow transferWindow = new TransferWindow();
+            transferWindow.Show();
+        }
+
+        private void OpenDepositBtn_OnClick(object sender, RoutedEventArgs e)
+        {
+            OpenDepositWindow openDepositWindow = new OpenDepositWindow();
+            openDepositWindow.Show();
+        }
+
+        private void CloseDepositBtn_OnClick(object sender, RoutedEventArgs e)
         {
             throw new System.NotImplementedException();
         }
 
-        private void SendTransferBtn_OnClick(object sender, RoutedEventArgs e)
+        private void TestBtn_OnClick(object sender, RoutedEventArgs e)
         {
             throw new System.NotImplementedException();
         }

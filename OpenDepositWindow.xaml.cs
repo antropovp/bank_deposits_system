@@ -10,12 +10,13 @@ namespace BankDepositsSystem
     /// </summary>
     public partial class OpenDepositWindow : Window
     {
-        private static readonly Regex _regex = new("[^0-9]+");
+        private static readonly Regex _regex = new("[^0-9._]+");
 
         public OpenDepositWindow()
         {
             InitializeComponent();
         }
+
         public void ValidateInput(object sender, TextCompositionEventArgs e)
         {
             e.Handled = _regex.IsMatch(e.Text);
