@@ -14,5 +14,11 @@ namespace BankDepositsSystem.Service.Implementation
 
             return newClient;
         }
+
+        public void RemoveClient(IClientRepository clientRepository, Client client)
+        {
+            clientRepository.Remove(client);
+            client = null;
+        }
     }
 }

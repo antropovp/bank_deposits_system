@@ -44,7 +44,10 @@ namespace BankDepositsSystem
 
         private void DeleteClientBtn_OnClick(object sender, RoutedEventArgs e)
         {
-            throw new System.NotImplementedException();
+            if (ClientTreeView.SelectedItem.GetType() != typeof(Client)) return;
+            
+            Client clientToBeDeleted = ClientTreeView.SelectedItem as Client;
+            ClientService.RemoveClient(ClientRepository, clientToBeDeleted);
         }
 
         private void TransferBtn_OnClick(object sender, RoutedEventArgs e)
@@ -61,7 +64,10 @@ namespace BankDepositsSystem
 
         private void CloseDepositBtn_OnClick(object sender, RoutedEventArgs e)
         {
-            throw new System.NotImplementedException();
+            if (ClientTreeView.SelectedItem.GetType() != typeof(Deposit)) return;
+
+            Deposit depositToBeClosed = ClientTreeView.SelectedItem as Deposit;
+            DepositService.CloseDeposit(depositToBeClosed);
         }
 
         private void TestBtn_OnClick(object sender, RoutedEventArgs e)

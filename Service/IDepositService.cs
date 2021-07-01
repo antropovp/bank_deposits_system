@@ -8,6 +8,8 @@ namespace BankDepositsSystem.Service
     {
         Deposit OpenDeposit(Client owner, string name, bool isCapitalized, double annualInterest, double amount);
 
+        void CloseDeposit(Deposit deposit);
+
         ObservableCollection<Deposit> GetAllDeposits(IClientRepository clientRepository);
     }
 }

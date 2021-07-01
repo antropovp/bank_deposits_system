@@ -15,6 +15,12 @@ namespace BankDepositsSystem.Service.Implementation
             return newDeposit;
         }
 
+        public void CloseDeposit(Deposit deposit)
+        {
+            deposit.Owner.Deposits.Remove(deposit);
+            deposit = null;
+        }
+
         public ObservableCollection<Deposit> GetAllDeposits(IClientRepository clientRepository)
         {
             ObservableCollection<Deposit> deposits = new ObservableCollection<Deposit>();
