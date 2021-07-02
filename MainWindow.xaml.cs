@@ -56,6 +56,11 @@ namespace BankDepositsSystem
             transferWindow.Show();
         }
 
+        private void AccountInfoBtn_OnClick(object sender, RoutedEventArgs e)
+        {
+            throw new System.NotImplementedException();
+        }
+
         private void OpenAccountBtn_OnClick(object sender, RoutedEventArgs e)
         {
             OpenAccountWindow openAccountWindow = new OpenAccountWindow();
