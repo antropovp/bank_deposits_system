@@ -15,21 +15,21 @@ namespace BankDepositsSystem
     {
         public IClientRepository ClientRepository { get; set; }
         public IClientService ClientService { get; set; }
-        public IDepositService DepositService { get; set; }
+        public IAccountService AccountService { get; set; }
 
         public MainWindow()
         {
             InitializeComponent();
             ClientRepository = new ClientRepository();
             ClientService = new ClientService();
-            DepositService = new DepositService();
+            AccountService = new AccountService();
 
             #region Test
 
             ClientService.AddClient(ClientRepository, "Joe", ClientType.REGULAR, false);
 
             Client empanadita = ClientService.AddClient(ClientRepository, "Steph", ClientType.CORPORATE, true);
-            DepositService.OpenDeposit(empanadita, "BBVA deposit", true, 14.5, 10_000);
+            AccountService.OpenAccount(empanadita, "BBVA deposit", true, 14.5, 10_000);
 
             #endregion
 
@@ -56,18 +56,18 @@ namespace BankDepositsSystem
             transferWindow.Show();
         }
 
-        private void OpenDepositBtn_OnClick(object sender, RoutedEventArgs e)
+        private void OpenAccountBtn_OnClick(object sender, RoutedEventArgs e)
         {
-            OpenDepositWindow openDepositWindow = new OpenDepositWindow();
-            openDepositWindow.Show();
+            OpenAccountWindow openAccountWindow = new OpenAccountWindow();
+            openAccountWindow.Show();
         }
 
-        private void CloseDepositBtn_OnClick(object sender, RoutedEventArgs e)
+        private void CloseAccountBtn_OnClick(object sender, RoutedEventArgs e)
         {
-            if (ClientTreeView.SelectedItem.GetType() != typeof(Deposit)) return;
+            if (ClientTreeView.SelectedItem.GetType() != typeof(Account)) return;
 
-            Deposit depositToBeClosed = ClientTreeView.SelectedItem as Deposit;
-            DepositService.CloseDeposit(depositToBeClosed);
+            Account accountToBeClosed = ClientTreeView.SelectedItem as Account;
+            AccountService.CloseAccount(accountToBeClosed);
         }
 
         private void TestBtn_OnClick(object sender, RoutedEventArgs e)

@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 
 namespace BankDepositsSystem.Entity
 {
-    public class Deposit
+    public class Account
     {
         public DateTime DateOfCreation { get; }
+        public ObservableCollection<Transaction> Transactions { get; set; }
 
         public string DateOfCreationWithoutTime_Text => DateOfCreation.ToString("dd/MM/yyyy");
 
@@ -14,9 +16,11 @@ namespace BankDepositsSystem.Entity
         public double AnnualInterest { get; }
         public double CurrentAmount { get; set; }
 
-        public Deposit(Client owner, string name, bool isCapitalized, double annualInterest, double amount)
+        public Account(Client owner, string name, bool isCapitalized, double annualInterest, double amount)
         {
             DateOfCreation = DateTime.Now;
+            Transactions = new ObservableCollection<Transaction>();
+
             Owner = owner;
             Name = name;
             IsCapitalized = isCapitalized;

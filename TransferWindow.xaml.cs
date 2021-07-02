@@ -17,7 +17,7 @@ namespace BankDepositsSystem
 
             MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
             ClientTreeView.ItemsSource = mainWindow.ClientRepository.Clients;
-            DepositBox.ItemsSource = mainWindow.DepositService.GetAllDeposits(mainWindow.ClientRepository);
+            DepositBox.ItemsSource = mainWindow.AccountService.GetAllAccounts(mainWindow.ClientRepository);
         }
 
         public void ValidateInput(object sender, TextCompositionEventArgs e)

@@ -60,15 +60,16 @@
     <Compile Include="AddClientWindow.xaml.cs">
       <DependentUpon>AddClientWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="OpenDepositWindow.xaml.cs">
-      <DependentUpon>OpenDepositWindow.xaml</DependentUpon>
+    <Compile Include="Entity\Transaction.cs" />
+    <Compile Include="OpenAccountWindow.xaml.cs">
+      <DependentUpon>OpenAccountWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Repository\Implementation\ClientRepository.cs" />
     <Compile Include="Repository\IClientRepository.cs" />
     <Compile Include="Service\IClientService.cs" />
-    <Compile Include="Service\IDepositService.cs" />
+    <Compile Include="Service\IAccountService.cs" />
     <Compile Include="Service\Implementation\ClientService.cs" />
-    <Compile Include="Service\Implementation\DepositService.cs" />
+    <Compile Include="Service\Implementation\AccountService.cs" />
     <Compile Include="TransferWindow.xaml.cs">
       <DependentUpon>TransferWindow.xaml</DependentUpon>
     </Compile>
@@ -85,13 +86,13 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Entity\Client.cs" />
-    <Compile Include="Entity\Deposit.cs" />
+    <Compile Include="Entity\Account.cs" />
     <Compile Include="Enum\ClientType.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="OpenDepositWindow.xaml">
+    <Page Include="OpenAccountWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

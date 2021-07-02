@@ -27,7 +27,7 @@
                     <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}"
                                      Color="Black" />
 
-                    <HierarchicalDataTemplate ItemsSource="{Binding Deposits}" 
+                    <HierarchicalDataTemplate ItemsSource="{Binding Accounts}" 
                                               DataType="{x:Type entity:Client}" >
                         <StackPanel>
                             <TextBlock Text="{Binding Name}" 
@@ -40,7 +40,7 @@
                             </StackPanel>
                         </StackPanel>
                     </HierarchicalDataTemplate>
-                    <DataTemplate DataType="{x:Type entity:Deposit}">
+                    <DataTemplate DataType="{x:Type entity:Account}">
                         <StackPanel>
                             <TextBlock Text="{Binding CurrentAmount}" 
                                        FontSize="15"/>
@@ -67,7 +67,7 @@
                     <Label Content="С вклада:" HorizontalAlignment="Left" FontSize="12"/>
                     <ComboBox x:Name="DepositBox" VerticalContentAlignment="Center" Height="45" SelectedIndex="0">
                         <ComboBox.ItemTemplate>
-                            <DataTemplate DataType="{x:Type entity:Deposit}">
+                            <DataTemplate DataType="{x:Type entity:Account}">
                                 <Grid Width="180" Height="45">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*"/>

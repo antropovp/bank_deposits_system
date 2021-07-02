@@ -6,13 +6,13 @@ using System.Windows.Input;
 namespace BankDepositsSystem
 {
     /// <summary>
-    /// Логика взаимодействия для OpenDepositWindow.xaml
+    /// Логика взаимодействия для OpenAccountWindow.xaml
     /// </summary>
-    public partial class OpenDepositWindow : Window
+    public partial class OpenAccountWindow : Window
     {
         private static readonly Regex _regex = new("[^0-9._]+");
 
-        public OpenDepositWindow()
+        public OpenAccountWindow()
         {
             InitializeComponent();
         }

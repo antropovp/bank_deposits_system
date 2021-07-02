@@ -9,14 +9,14 @@ namespace BankDepositsSystem.Entity
         public ClientType Type { get; }
         public bool IsHighCreditScore { get; }
 
-        public ObservableCollection<Deposit> Deposits { get; set; }
+        public ObservableCollection<Account> Accounts { get; set; }
 
         public Client(string name, ClientType type, bool isHighCreditScore)
         {
             Name = name;
             Type = type;
             IsHighCreditScore = isHighCreditScore;
-            Deposits = new ObservableCollection<Deposit>();
+            Accounts = new ObservableCollection<Account>();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using BankDepositsSystem.Entity;
+using BankDepositsSystem.Enum;
 
 namespace BankDepositsSystem.Repository.Implementation
 {
