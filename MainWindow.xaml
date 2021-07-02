@@ -69,7 +69,7 @@
                 </HierarchicalDataTemplate>
                 <DataTemplate DataType="{x:Type entity:Deposit}">
                     <StackPanel>
-                        <TextBlock Text="{Binding Amount}" 
+                        <TextBlock Text="{Binding CurrentAmount}" 
                                    FontSize="15"/>
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="Годовой процент:"
