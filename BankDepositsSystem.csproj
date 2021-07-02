@@ -60,7 +60,6 @@
     <Compile Include="AddClientWindow.xaml.cs">
       <DependentUpon>AddClientWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Entity\Loan.cs" />
     <Compile Include="OpenDepositWindow.xaml.cs">
       <DependentUpon>OpenDepositWindow.xaml</DependentUpon>
     </Compile>

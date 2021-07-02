@@ -42,7 +42,7 @@
                     </HierarchicalDataTemplate>
                     <DataTemplate DataType="{x:Type entity:Deposit}">
                         <StackPanel>
-                            <TextBlock Text="{Binding Amount}" 
+                            <TextBlock Text="{Binding CurrentAmount}" 
                                        FontSize="15"/>
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="Годовой процент:"
@@ -82,7 +82,7 @@
                                     </StackPanel>
 
                                     <StackPanel Grid.Column="1" HorizontalAlignment="Right" Width="90">
-                                        <TextBlock Text="{Binding Amount}" TextWrapping="Wrap"
+                                        <TextBlock Text="{Binding CurrentAmount}" TextWrapping="Wrap"
                                                Margin="0" FontSize="13" TextAlignment="Right"/>
                                         <TextBlock Text="{Binding AnnualInterest}"
                                                Margin="0 0" FontSize="10" Foreground="DimGray" TextAlignment="Right"/>
