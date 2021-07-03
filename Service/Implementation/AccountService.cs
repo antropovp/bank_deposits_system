@@ -6,9 +6,9 @@ namespace BankDepositsSystem.Service.Implementation
 {
     public class AccountService : IAccountService
     {
-        public Account OpenAccount(Client owner, string name, bool isCapitalized, double annualInterest, double amount)
+        public Account OpenAccount(bool isCredit, Client owner, string name, bool isCapitalized, double annualInterest, double amount)
         {
-            Account newAccount = new Account(owner, name, isCapitalized, annualInterest, amount);
+            Account newAccount = new Account(isCredit, owner, name, isCapitalized, annualInterest, amount);
 
             owner.Accounts.Add(newAccount);
 

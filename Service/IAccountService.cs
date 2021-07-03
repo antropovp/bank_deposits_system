@@ -6,7 +6,7 @@ namespace BankDepositsSystem.Service
 {
     public interface IAccountService
     {
-        Account OpenAccount(Client owner, string name, bool isCapitalized, double annualInterest, double amount);
+        Account OpenAccount(bool isCredit, Client owner, string name, bool isCapitalized, double annualInterest, double amount);
 
         void CloseAccount(Account account);
 

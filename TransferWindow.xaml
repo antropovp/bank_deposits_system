@@ -35,7 +35,7 @@
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="Тип клиента:"
                                            FontSize="12" Foreground="DimGray"/>
-                                <TextBlock Text="{Binding Status}" Margin="3 0 0 0"
+                                <TextBlock Text="{Binding Type}" Margin="3 0 0 0"
                                            FontSize="12" Foreground="DimGray"/>
                             </StackPanel>
                         </StackPanel>

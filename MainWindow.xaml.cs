@@ -31,7 +31,7 @@ namespace BankDepositsSystem
             ClientService.AddClient(ClientRepository, "Joe", ClientType.REGULAR, false);
 
             Client empanadita = ClientService.AddClient(ClientRepository, "Steph", ClientType.CORPORATE, true);
-            AccountService.OpenAccount(empanadita, "BBVA deposit", true, 14.5, 10_000);
+            AccountService.OpenAccount(false, empanadita, "BBVA deposit", true, 14.5, 10_000);
 
             #endregion
 
