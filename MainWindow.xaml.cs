@@ -79,7 +79,14 @@ namespace BankDepositsSystem
 
         private void TestBtn_OnClick(object sender, RoutedEventArgs e)
         {
-            throw new System.NotImplementedException();
+            //throw new System.NotImplementedException();
+
+            #region Test
+
+            DialogWindow dialogWindow = new DialogWindow() { Owner = this };
+            dialogWindow.Show();
+
+            #endregion
         }
     }
 }
