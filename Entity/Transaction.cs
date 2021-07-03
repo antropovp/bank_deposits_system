@@ -12,11 +12,5 @@
             Receiver = receiver;
             Amount = amount;
         }
-
-        public Transaction(Account receiver, double amount)
-        {
-            Receiver = receiver;
-            Amount = amount;
-        }
     }
 }

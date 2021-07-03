@@ -70,6 +70,8 @@
     <Compile Include="Service\IAccountService.cs" />
     <Compile Include="Service\Implementation\ClientService.cs" />
     <Compile Include="Service\Implementation\AccountService.cs" />
+    <Compile Include="Service\Implementation\TransactionService.cs" />
+    <Compile Include="Service\ITransactionService.cs" />
     <Compile Include="TransferWindow.xaml.cs">
       <DependentUpon>TransferWindow.xaml</DependentUpon>
     </Compile>

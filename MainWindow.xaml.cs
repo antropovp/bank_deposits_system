@@ -13,9 +13,10 @@ namespace BankDepositsSystem
     /// </summary>
     public partial class MainWindow : Window
     {
-        public IClientRepository ClientRepository { get; set; }
-        public IClientService ClientService { get; set; }
-        public IAccountService AccountService { get; set; }
+        public IClientRepository ClientRepository { get; }
+        public IClientService ClientService { get; }
+        public IAccountService AccountService { get; }
+        public ITransactionService TransactionService { get; }
 
         public MainWindow()
         {
@@ -23,6 +24,7 @@ namespace BankDepositsSystem
             ClientRepository = new ClientRepository();
             ClientService = new ClientService();
             AccountService = new AccountService();
+            TransactionService = new TransactionService();
 
             #region Test
 

@@ -1,6 +1,8 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Text.RegularExpressions;
 using System.Windows.Input;
+using BankDepositsSystem.Entity;
 
 namespace BankDepositsSystem
 {
@@ -10,14 +12,15 @@ namespace BankDepositsSystem
     public partial class TransferWindow : Window
     {
         private static readonly Regex _regex = new("[^0-9._]+");
+        private readonly MainWindow mainWindow;
 
         public TransferWindow()
         {
             InitializeComponent();
+            mainWindow = Application.Current.MainWindow as MainWindow;
 
-            MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
             ClientTreeView.ItemsSource = mainWindow.ClientRepository.Clients;
-            DepositBox.ItemsSource = mainWindow.AccountService.GetAllAccounts(mainWindow.ClientRepository);
+            AccountBox.ItemsSource = mainWindow.AccountService.GetAllAccounts(mainWindow.ClientRepository);
         }
 
         public void ValidateInput(object sender, TextCompositionEventArgs e)
@@ -27,7 +30,11 @@ namespace BankDepositsSystem
 
         private void TransferBtn_OnClick(object sender, RoutedEventArgs e)
         {
-            throw new System.NotImplementedException();
+            if (AccountBox.SelectionBoxItem.GetType() != typeof(Account)) return;
+            if (ClientTreeView.SelectedItem.GetType() != typeof(Account)) return;
+
+            mainWindow.TransactionService.CreateTransaction(AccountBox.SelectionBoxItem as Account,
+                ClientTreeView.SelectedItem as Account, Convert.ToDouble(TransferAmountBox.Text));
         }
     }
 }

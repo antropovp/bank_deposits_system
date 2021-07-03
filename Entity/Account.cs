@@ -15,12 +15,14 @@ namespace BankDepositsSystem.Entity
         public bool IsCapitalized { get; }
         public double AnnualInterest { get; }
         public double CurrentAmount { get; set; }
+        public bool IsCredit { get; }
 
-        public Account(Client owner, string name, bool isCapitalized, double annualInterest, double amount)
+        public Account(bool isCredit, Client owner, string name, bool isCapitalized, double annualInterest, double amount)
         {
             DateOfCreation = DateTime.Now;
             Transactions = new ObservableCollection<Transaction>();
 
+            IsCredit = isCredit;
             Owner = owner;
             Name = name;
             IsCapitalized = isCapitalized;

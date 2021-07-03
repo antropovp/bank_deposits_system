@@ -65,7 +65,7 @@
             <StackPanel Grid.Column="0" VerticalAlignment="Center" Orientation="Horizontal" Margin="0 0 0 0">
                 <StackPanel Width="220">
                     <Label Content="С вклада:" HorizontalAlignment="Left" FontSize="12"/>
-                    <ComboBox x:Name="DepositBox" VerticalContentAlignment="Center" Height="45" SelectedIndex="0">
+                    <ComboBox x:Name="AccountBox" VerticalContentAlignment="Center" Height="45" SelectedIndex="0">
                         <ComboBox.ItemTemplate>
                             <DataTemplate DataType="{x:Type entity:Account}">
                                 <Grid Width="180" Height="45">
